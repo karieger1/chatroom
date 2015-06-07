@@ -54,7 +54,17 @@ function apple1(){$.get('https://cat-chat-1.herokuapp.com/chatrooms/The_Living_R
 	apple1();
 function apple2(){$.get('https://cat-chat-1.herokuapp.com/chatrooms/The_Tree', function(z){	
 	$('#displayWindow2').html('');
-	for(var p = 0;p<z.length;p++){$('#displayWindow2').append(z[p].user + ": " + z[p].message + "<br/>");
+	for(var p = 0;p<z.length;p++){
+		var currentTime = z[p].created_at;
+  		var currentHours = currentTime.slice(11,13);
+  		var currentMinutes = currentTime.slice(14,16);
+  		var currentSeconds = currentTime.slice(17,19);
+  		var currentMonth = currentTime.slice(5,7);
+  		var currentYear = currentTime.slice(0,4);
+  		var currentDay = currentTime.slice(8,10);
+  		var currentTimeString = currentMonth + "/" + currentDay + "/" + currentYear + " " + currentHours + ":" + currentMinutes + ":" + currentSeconds;
+  		console.log(currentTimeString);
+		$('#displayWindow2').append(currentTimeString + " " + z[p].user + ": " + z[p].message + "<br/>");
    	}
    	keith();
    	$('#displayWindow2').emoticonize();
@@ -65,7 +75,17 @@ function apple2(){$.get('https://cat-chat-1.herokuapp.com/chatrooms/The_Tree', f
 	apple2();
 function apple3(){$.get('https://cat-chat-1.herokuapp.com/chatrooms/The_Litter_Box', function(z){	
 	$('#displayWindow3').html('');
-    for(var p = 0;p<z.length;p++){$('#displayWindow3').append(z[p].user + ": " + z[p].message + "<br/>");
+    for(var p = 0;p<z.length;p++){
+		var currentTime = z[p].created_at;
+  		var currentHours = currentTime.slice(11,13);
+  		var currentMinutes = currentTime.slice(14,16);
+  		var currentSeconds = currentTime.slice(17,19);
+  		var currentMonth = currentTime.slice(5,7);
+  		var currentYear = currentTime.slice(0,4);
+  		var currentDay = currentTime.slice(8,10);
+  		var currentTimeString = currentMonth + "/" + currentDay + "/" + currentYear + " " + currentHours + ":" + currentMinutes + ":" + currentSeconds;
+  		console.log(currentTimeString);
+		$('#displayWindow3').append(currentTimeString + " " + z[p].user + ": " + z[p].message + "<br/>");
    	}
    	$('#displayWindow3').emoticonize();
    	keith();
