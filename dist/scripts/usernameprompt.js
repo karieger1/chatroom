@@ -36,7 +36,7 @@ swal ({
 			swal.showInputError("You need to write something!");     
 			return false   }
 			swal("Well, alright...", "Your amazing username is: " + name, "success");
-			sam.hobby="painting";
+			//sam.hobby="painting";
 			 });
 		
 // var yell = "";
