@@ -1,8 +1,21 @@
 $(document).ready(function() {
 
-var savie = {savedTimeStamp:"milkshake"};
+var savie1 = {savedTimeStamp:"milkshake"};
+var savie2 = {savedTimeStamp:"milkshake"};
+var savie3 = {savedTimeStamp:"milkshake"};
+var sam = {hobby:"skiing"};
 var matthew = {nombre:"foo123"};
-
+setInterval(brains,500);
+function brains(){
+	if(matthew.nombre==="foo123"){var wasteoftime = true;
+	}
+	else if(sam.hobby==="skiing"){apple1();keith();
+	}
+	else if(sam.hobby==="drinking"){apple2();keith();
+	}
+	else if(sam.hobby==="cowtipping"){apple3();keith();
+	}
+}
 swal ({ 
 	title: "Welcome to Cat Chat!",   
 	text: "Type a username below. Make it good.",   
@@ -22,7 +35,9 @@ swal ({
 		if (name === "") {     
 			swal.showInputError("You need to write something!");     
 			return false   }
-			swal("Well, alright...", "Your amazing username is: " + name, "success"); });
+			swal("Well, alright...", "Your amazing username is: " + name, "success");
+			sam.hobby="painting";
+			 });
 		
 // var yell = "";
 // yell = z[z.length-1].message; 
@@ -53,7 +68,7 @@ function apple1(){$.get('https://cat-chat-1.herokuapp.com/chatrooms/The_Living_R
 	else if(typeof z === undefined){
 		console.log('z is blank');
 	}
-	else if(z[z.length-1].created_at === savie.savedTimeStamp){
+	else if(z[z.length-1].created_at === savie1.savedTimeStamp){
 		console.log('houseboat');
 	}
 	else if(
@@ -73,10 +88,11 @@ function apple1(){$.get('https://cat-chat-1.herokuapp.com/chatrooms/The_Living_R
 			console.log(z[z.length-1].message.match(/http/));
 			yell=z[z.length-1].user + " posted a picture";
 			talky();
+			savie1.savedTimeStamp = z[z.length-1].created_at;
 	}
 	else {
-		yell=z[z.length-1].message;talky();savie.savedTimeStamp = z[z.length-1].created_at;
-		console.log(savie.savedTimeStamp);
+		yell=z[z.length-1].message;talky();savie1.savedTimeStamp = z[z.length-1].created_at;
+		console.log(savie1.savedTimeStamp);
 	}
 	for(var p = 0;p<z.length;p++){
 		var currentTime = z[p].created_at;
@@ -99,6 +115,52 @@ function apple1(){$.get('https://cat-chat-1.herokuapp.com/chatrooms/The_Living_R
 	apple1();
 function apple2(){$.get('https://cat-chat-1.herokuapp.com/chatrooms/The_Tree', function(z){	
 	$('#displayWindow2').html('');
+	var patt1 = new RegExp("http");
+		
+	var	patt2 = new RegExp("jpeg");
+	
+	var	patt3 = new RegExp("png");
+		
+	var	patt4 = new RegExp("jpg");
+	
+	var	patt5 = new RegExp("jpeg");
+		
+	var	patt6 = new RegExp("gif");
+		
+	var	patt7 = new RegExp(".ico");
+		
+	if(matthew.nombre==="foo123"){
+		console.log("no update yet name is not chosen")
+	}
+	else if(typeof z === undefined){
+		console.log('z is blank');
+	}
+	else if(z[z.length-1].created_at === savie2.savedTimeStamp){
+		console.log('houseboat');
+	}
+	else if(
+		patt1.test(z[z.length-1].message)===true ||
+		
+		patt2.test(z[z.length-1].message)===true ||
+	
+		patt3.test(z[z.length-1].message)===true ||
+		
+		patt4.test(z[z.length-1].message)===true ||
+		
+		patt5.test(z[z.length-1].message)===true ||
+		
+		patt6.test(z[z.length-1].message)===true ||
+	
+		patt7.test(z[z.length-1].message)===true){
+			console.log(z[z.length-1].message.match(/http/));
+			yell=z[z.length-1].user + " posted a picture";
+			talky();
+			savie2.savedTimeStamp = z[z.length-1].created_at;
+	}
+	else {
+		yell=z[z.length-1].message;talky();savie2.savedTimeStamp = z[z.length-1].created_at;
+		console.log(savie2.savedTimeStamp);
+	}
 	for(var p = 0;p<z.length;p++){
 		var currentTime = z[p].created_at;
   		var currentHours = currentTime.slice(11,13);
@@ -120,6 +182,52 @@ function apple2(){$.get('https://cat-chat-1.herokuapp.com/chatrooms/The_Tree', f
 	apple2();
 function apple3(){$.get('https://cat-chat-1.herokuapp.com/chatrooms/The_Litter_Box', function(z){	
 	$('#displayWindow3').html('');
+	var patt1 = new RegExp("http");
+		
+	var	patt2 = new RegExp("jpeg");
+	
+	var	patt3 = new RegExp("png");
+		
+	var	patt4 = new RegExp("jpg");
+	
+	var	patt5 = new RegExp("jpeg");
+		
+	var	patt6 = new RegExp("gif");
+		
+	var	patt7 = new RegExp(".ico");
+		
+	if(matthew.nombre==="foo123"){
+		console.log("no update yet name is not chosen")
+	}
+	else if(typeof z === undefined){
+		console.log('z is blank');
+	}
+	else if(z[z.length-1].created_at === savie3.savedTimeStamp){
+		console.log('houseboat');
+	}
+	else if(
+		patt1.test(z[z.length-1].message)===true ||
+		
+		patt2.test(z[z.length-1].message)===true ||
+	
+		patt3.test(z[z.length-1].message)===true ||
+		
+		patt4.test(z[z.length-1].message)===true ||
+		
+		patt5.test(z[z.length-1].message)===true ||
+		
+		patt6.test(z[z.length-1].message)===true ||
+	
+		patt7.test(z[z.length-1].message)===true){
+			console.log(z[z.length-1].message.match(/http/));
+			yell=z[z.length-1].user + " posted a picture or a link";
+			talky();
+			savie3.savedTimeStamp = z[z.length-1].created_at;
+	}
+	else {
+		yell=z[z.length-1].message;talky();savie3.savedTimeStamp = z[z.length-1].created_at;
+		console.log(savie3.savedTimeStamp);
+	}
     for(var p = 0;p<z.length;p++){
 		var currentTime = z[p].created_at;
   		var currentHours = currentTime.slice(11,13);
@@ -252,6 +360,7 @@ $("#chatOne").click(function(){
     $('#chatOne').css("background","gray");
     $('#chatTwo').css("background","black");
     $('#chatThree').css("background","black");
+    sam.hobby==="skiing";
 });
 
 $("#chatTwo").click(function() {
@@ -262,6 +371,7 @@ $("#chatTwo").click(function() {
 	$('#chatOne').css("background","black");
     $('#chatTwo').css("background","gray");
     $('#chatThree').css("background","black");
+    sam.hobby="drinking";
 });
 
 $("#chatThree").click(function() {
@@ -272,6 +382,7 @@ $("#chatThree").click(function() {
 	$('#chatOne').css("background","black");
     $('#chatTwo').css("background","black");
     $('#chatThree').css("background","gray");
+    sam.hobby="cowtipping";
 });
 
 
