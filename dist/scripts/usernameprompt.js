@@ -1,7 +1,8 @@
 $(document).ready(function() {
 
+var savie = {savedTimeStamp:"milkshake"};
+var matthew = {nombre:"foo123"};
 
-matthew = {};
 swal ({ 
 	title: "Welcome to Cat Chat!",   
 	text: "Type a username below. Make it good.",   
@@ -32,7 +33,51 @@ swal ({
 function apple1(){$.get('https://cat-chat-1.herokuapp.com/chatrooms/The_Living_Room', function(z){	
 	console.log(z);
 	$('#displayWindow1').html('');
+	var patt1 = new RegExp("http");
+		
+	var	patt2 = new RegExp("jpeg");
 	
+	var	patt3 = new RegExp("png");
+		
+	var	patt4 = new RegExp("jpg");
+	
+	var	patt5 = new RegExp("jpeg");
+		
+	var	patt6 = new RegExp("gif");
+		
+	var	patt7 = new RegExp(".ico");
+		
+	if(matthew.nombre==="foo123"){
+		console.log("no update yet name is not chosen")
+	}
+	else if(typeof z === undefined){
+		console.log('z is blank');
+	}
+	else if(z[z.length-1].created_at === savie.savedTimeStamp){
+		console.log('houseboat');
+	}
+	else if(
+		patt1.test(z[z.length-1].message)===true ||
+		
+		patt2.test(z[z.length-1].message)===true ||
+	
+		patt3.test(z[z.length-1].message)===true ||
+		
+		patt4.test(z[z.length-1].message)===true ||
+		
+		patt5.test(z[z.length-1].message)===true ||
+		
+		patt6.test(z[z.length-1].message)===true ||
+	
+		patt7.test(z[z.length-1].message)===true){
+			console.log(z[z.length-1].message.match(/http/));
+			yell=z[z.length-1].user + " posted a picture";
+			talky();
+	}
+	else {
+		yell=z[z.length-1].message;talky();savie.savedTimeStamp = z[z.length-1].created_at;
+		console.log(savie.savedTimeStamp);
+	}
 	for(var p = 0;p<z.length;p++){
 		var currentTime = z[p].created_at;
   		var currentHours = currentTime.slice(11,13);
@@ -132,19 +177,26 @@ function keith(){
 		$('#stats1').append("<h6 class='statsTitle'>Most Popular Chatroom</h6>"+mpc+"<br/><h6 class='statsTitle'>Top Ten Users</h6>");
 		for(var m=0;m<ttu.length;m++){$('#stats1').append(ttu[m].user+"<br/>");}	
 		$('#stats1').append("<h6 class='statsTitle'>Recently Active Users</h6>");
-		for(var i=0;i<rau.length;i++){$('#stats1').append(rau[i]+"<br/>");}
+		if(rau===null){console.log("rau is null");}
+		else{for(var i=0;i<rau.length;i++){$('#stats1').append(rau[i]+"<br/>");}
+		};
+		
 
 		$('#stats2').html("");
 		$('#stats2').append("<h6 class='statsTitle'>Most Popular Chatroom</h6>"+mpc+"<br/><h6 class='statsTitle'>Top Ten Users</h6>");
 		for(var m=0;m<ttu.length;m++){$('#stats2').append(ttu[m].user+"<br/>");}	
 		$('#stats2').append("<h6 class='statsTitle'>Recently Active Users</h6>");
-		for(var i=0;i<rau.length;i++){$('#stats2').append(rau[i]+"<br/>");}
+		if(rau===null){console.log("rau is null");}
+		else{for(var i=0;i<rau.length;i++){$('#stats2').append(rau[i]+"<br/>");}
+		};
 
 		$('#stats3').html("");
 		$('#stats3').append("<h6 class='statsTitle'>Most Popular Chatroom</h6>"+mpc+"<br/><h6 class='statsTitle'>Top Ten Users</h6>");
 		for(var m=0;m<ttu.length;m++){$('#stats3').append(ttu[m].user+"<br/>");}	
 		$('#stats3').append("<h6 class='statsTitle'>Recently Active Users</h6>");
-		for(var i=0;i<rau.length;i++){$('#stats3').append(rau[i]+"<br/>");}
+		if(rau===null){console.log("rau is null");}
+		else{for(var i=0;i<rau.length;i++){$('#stats3').append(rau[i]+"<br/>");}
+		};
 	});
 
 	
